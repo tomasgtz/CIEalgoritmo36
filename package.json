@@ -1,0 +1,40 @@
+{
+  "name": "cie-calculator",
+  "version": "1.0.3",
+  "description": "Easily generate CIE References",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "uglify-js": "^3.3.25"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.1",
+    "should": "*",
+    "supertest": "^3.1.0",
+    "underscore": "^1.8.3",
+    "watchify": "^3.11.0"
+  },
+  "scripts": {
+    "build-debug": "browserify main.js -d --s CIECalculator > dist/ciecalculator.js",
+    "build-min": "browserify main.js --s CIECalculator | uglifyjs -c > dist/ciecalculator.min.js",
+    "build": "npm run build-debug && npm run build-min",
+    "watch": "watchify main.js -d --s CIECalculator -o dist/ciecalculator.js -v",
+    "test": "mocha"
+  },
+  "author": "Sergio Lopez-Mendez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slopezm-adquira/cie-calculator"
+  },
+  "keywords": [
+    "cie",
+    "bbva",
+    "reference"
+  ],
+  "bugs": {
+    "url": "https://github.com/slopezm-adquira/cie-calculator/issues"
+  },
+  "homepage": "https://github.com/slopezm-adquira/cie-calculator"
+}
