@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
    var id = req.query.id;
    data = calculator.execute({alg: '36', reference: id})
-   res.send(data);
+   res.send(JSON.stringify({"CIE": data}));
 });
 
 app.use(router);
